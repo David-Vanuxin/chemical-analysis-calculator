@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 
 import Counter from "./components/Counter"
+import Echo from "./components/Echo"
 
 
 export default function App() {
@@ -19,6 +20,7 @@ export default function App() {
             <li><Link to="/about">About</Link></li>
             <li><Link to="/users">Users</Link></li>
             <li><Link to="/counter">Counter</Link></li>
+            <li><Link to="/echo">Echo</Link></li>
           </ul>
         </nav>
         <Routes>
@@ -26,6 +28,7 @@ export default function App() {
           <Route path="/users" caseSensitive={false} element={<Users />} />
           <Route path="/" caseSensitive={false} element={<Home />} />
           <Route path="/counter" caseSensitive={false} element={<Counter />} />
+          <Route path="/echo" caseSensitive={false} element={<Echo />} />
         </Routes>
       </div>
     </Router>

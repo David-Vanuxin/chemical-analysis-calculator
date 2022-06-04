@@ -1,18 +1,9 @@
 import { createStore } from 'redux'
 import React, {useState} from "react"
 
-function counterReducer(state = { value: 0 }, action) {
-  switch (action.type) {
-    case 'counter/incremented':
-      return { value: state.value + 1 }
-    case 'counter/decremented':
-      return { value: state.value - 1 }
-    default:
-      return state
-  }
-}
+import {counterReducer} from '../redux/rootReducer'
 
-let store = createStore(counterReducer)
+const store = createStore(counterReducer)
 
 export default function Counter() {
   const [count, setCount] = useState(0)
