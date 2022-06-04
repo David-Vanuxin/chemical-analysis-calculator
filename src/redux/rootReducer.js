@@ -1,6 +1,12 @@
 //import {combineReducers} from 'redux'
 
-export function counterReducer(state = { value: 0 }, action) {
+// Нужен ли в этом проекте redux?
+
+
+
+
+
+/*export function counterReducer(state = { value: 0 }, action) {
   switch (action.type) {
     case 'counter/incremented':
       return { value: state.value + 1 }
@@ -9,9 +15,9 @@ export function counterReducer(state = { value: 0 }, action) {
     default:
       return state
   }
-}
+}*/
 
-export function echoReducer(state = { text: "Введите текст" }, action) {
+/*export function echoReducer(state = { text: "Введите текст" }, action) {
 	console.log("search: ", action.text.search(/\s+/))
 
 	if (action.text === "") {
@@ -28,7 +34,7 @@ export function echoReducer(state = { text: "Введите текст" }, actio
 	state.text = action.text
 	return state
 
-}
+}*/
 
 
 /*export const rootReducer = combineReducers({
