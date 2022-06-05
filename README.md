@@ -4,7 +4,7 @@
 
 ## Building
 ```bash
-git clone https://github.com/David-Vanuxin/chemical-analysis-calculator.git &&
+git clone https://github.com/David-Vanuxin/Chemical-analysis-calculator.git &&
 cd chemical-analysis-calculator &&
 npm run build
 ```
