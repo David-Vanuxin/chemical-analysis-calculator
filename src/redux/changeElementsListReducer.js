@@ -1,9 +1,28 @@
 //import {combineReducers} from 'redux'
 
-// Нужен ли в этом проекте redux?
+export default function changeElementsListReducer(state = { data:[] }, action) {
+	if (action.type === "addElement") {
+		state.data.push({
+			name: action.name,
+			value:null
+		})
 
+		console.log(state.data)
+		return state
+	}
 
+	if (action.type === "removeElement") {
+		for (let elem of state.data) {
+			if (elem.name === action.name) {
+				let index = state.data.indexOf(elem)
+				state.data.splice(index, index + 1)
+			}
+		}
 
+		console.log(state.data)
+		return state
+	}
+}
 
 
 /*export function counterReducer(state = { value: 0 }, action) {

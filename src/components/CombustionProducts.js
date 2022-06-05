@@ -1,5 +1,6 @@
 import React from "react"
 import { useNavigate } from "react-router-dom"
+import InputSubstance from "./InputSubstance"
 
 export default function CombustionProducts(props) {
   let navigate = useNavigate();
@@ -38,15 +39,38 @@ export default function CombustionProducts(props) {
 	)
 }
 
+/*let store = createStore(changeElementsListReducer)
+
 function InputSubstance(props) {
+	const [state, setState] = useState(false)
+	return (<label>
+			<input type="checkbox" onClick={() => changeElement(props.name)}></input>
+			<span id={props.name}>{props.name}</span>
+		</label>
+	)
+
+	function changeElement(name) {
+		if (state) {
+			console.log("Remove elem", name)
+			setState(false)
+			store.dispatch({ type:"removeElement", name: props.name})
+		} else {
+			console.log("Added elem", name)
+			setState(true)
+			store.dispatch({ type:"addElement", name: props.name})
+		}
+	}
+}*/
+
+/*function InputSubstance(props) {
 	return (<label>
 			<input type="checkbox" onClick={() => addElement(props.name)}></input>
 			<span id={props.name}>{props.name}</span>
 		</label>
 	)
-}
+}*/
 
-const addElement = (name) => {
+/*const addElement = (name) => {
 	let data = JSON.parse(sessionStorage.getItem("data"))
 
 	data.push({
@@ -55,4 +79,4 @@ const addElement = (name) => {
 	})
 
 	sessionStorage.data = JSON.stringify(data)
-}
+}*/

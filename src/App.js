@@ -2,8 +2,7 @@ import React from "react"
 import {
   BrowserRouter as Router,
   Routes,
-  Route,
-  /*Link*/
+  Route
 } from "react-router-dom";
 
 import Home from "./components/Home"
@@ -15,13 +14,6 @@ export default function App() {
   return (
     <Router>
       <div>
-{/*        <nav>
-          <ul>
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/counter">Counter</Link></li>
-            <li><Link to="/echo">Echo</Link></li>
-          </ul>
-        </nav>*/}
         <Routes>
           <Route path="/" caseSensitive={false} element={<Home />} />
           <Route path="/combustion-products" caseSensitive={false} element={<CombustionProducts />} />
