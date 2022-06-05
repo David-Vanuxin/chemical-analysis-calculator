@@ -1,4 +1,4 @@
-import React from "react"
+import React, {useState} from "react"
 import { useNavigate } from "react-router-dom"
 import InputNumber from "./InputNumber"
 
@@ -10,24 +10,39 @@ let store = createStore(changeElementsListReducer)
 export default function QuantitativeValues(props) {
   let navigate = useNavigate();
 
-  let data = JSON.parse(sessionStorage.data)
-  let matters = []
+  //let data = JSON.parse(sessionStorage.data)
+  //let data = store.getState().data
+  /*let matters = []*/
 
-  for (let elem of data) {
+/*  for (let elem of data) {
   	matters.push(<InputNumber name={elem.name}/>)
-  }
+  }*/
+
+  const [data, setData] = useState(1)
+
+  store.subscribe(() => {
+  	setData(store.getState().data)
+  })
 
 
 	return(
 		<>
 			<h1>Калькулятор для химического анализа органических веществ</h1>
 			<h2>Введите количественные значения для продуктов сгорания</h2>
+			<button onClick={() => console.log(data)}>asd</button>
 			<ul>
-			{
+				{/*<li><InputNumber name={"asd"}/></li>*/}
+{/*			{
 				matters.map((el, index) => {
 					return (<li key={index}>{el}</li>)
 				})
-			}
+			}*/}
+{/*			{
+				data.map((elem, index) => {
+					//return (<li key={index}>{el}</li>)
+					return (<li key={index}><InputNumber name={elem.name}/></li>)
+				})
+			}*/}
 			</ul>
 			<>
 				<button onClick={() => navigate("/combustion-products")}>Назад</button>
