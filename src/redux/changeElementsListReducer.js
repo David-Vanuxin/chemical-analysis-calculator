@@ -22,6 +22,18 @@ export default function changeElementsListReducer(state = { data:[] }, action) {
 		console.log(state.data)
 		return state
 	}
+
+	if (action.type === "changeMass") {
+/*		for (let elem of state.data) {
+			if (elem.name === action.name) {
+				let index = state.data.indexOf(elem)
+				state.data.splice(index, index + 1)
+			}
+		}*/
+
+		console.log(`Mass elem ${action.name} = ${action.mass} `)
+		return state
+	}
 }
 
 

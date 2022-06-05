@@ -1,5 +1,11 @@
 import React from "react"
 import { useNavigate } from "react-router-dom"
+import InputNumber from "./InputNumber"
+
+import changeElementsListReducer from "../redux/changeElementsListReducer"
+import {createStore} from "redux"
+
+let store = createStore(changeElementsListReducer)
 
 export default function QuantitativeValues(props) {
   let navigate = useNavigate();
@@ -8,7 +14,7 @@ export default function QuantitativeValues(props) {
   let matters = []
 
   for (let elem of data) {
-  	matters.push(<InputSubstance name={elem.name}/>)
+  	matters.push(<InputNumber name={elem.name}/>)
   }
 
 
@@ -30,7 +36,7 @@ export default function QuantitativeValues(props) {
 		</>)
 }
 
-function InputSubstance(props) {
+/*function InputNumber(props) {
 	let unit = "г"
 	if (props.name === "CO2") unit = "л"
 
@@ -41,8 +47,12 @@ function InputSubstance(props) {
 			{unit}
 		</label>
 	)
-}
 
+	function changeValue(name, value) {
+
+	}
+}*/
+/*
 const changeValue = (name, value) => {
 	let data = JSON.parse(sessionStorage.data)// array with elements
 	// also we take arg value, when contain number - mass of combustion product
@@ -66,4 +76,4 @@ const changeValue = (name, value) => {
 	}
 
 	sessionStorage.data = JSON.stringify(newData)
-}
+}*/

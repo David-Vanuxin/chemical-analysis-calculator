@@ -13,12 +13,12 @@ export default function CombustionProducts(props) {
   	<InputSubstance name="K2CO3"/>,
   ]
 
-  let data = [
+/*  let data = [
   	{name:"CO2", value:null},
   	{name:"H2O", value:null}
   ]
 
-  sessionStorage.data = JSON.stringify(data)
+  sessionStorage.data = JSON.stringify(data)*/
 
 	return(
 		<>
