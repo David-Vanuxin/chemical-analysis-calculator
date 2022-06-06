@@ -1,4 +1,13 @@
-export default function changeElementsListReducer(state = { data:[] }, action) {
+const initialState = {
+	data: [
+		{name:"CO2", value:null},
+		{name:"H2O", value:null},
+	]
+}
+
+
+
+export default function changeElementsListReducer(state = initialState, action) {
 	if (action.type === "addElement") {
 		state.data.push({
 			name: action.name,

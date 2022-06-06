@@ -1,15 +1,14 @@
-import changeElementsListReducer from "../redux/changeElementsListReducer"
 import React from "react"
-import {createStore} from "redux"
-
-let store = createStore(changeElementsListReducer)
+import {useDispatch} from 'react-redux'
 
 export default function InputNumber(props) {
 	let unit = "г"
 	if (props.name === "CO2") unit = "л"
 
+	const dispatch = useDispatch()
+
 	function changeValue(name, value) {
-		store.dispatch({ type:"changeMass", name: props.name, mass: value })
+		dispatch({ type:"changeMass", name: props.name, mass: value })
 	}
 
 	return (

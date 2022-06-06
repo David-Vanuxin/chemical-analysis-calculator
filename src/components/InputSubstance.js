@@ -1,22 +1,29 @@
-//import changeElementsListReducer from "../redux/changeElementsListReducer"
 import React, {useState} from "react"
 import {useDispatch, useSelector} from 'react-redux'
-//import {createStore} from "redux"
-
-/*let store = createStore(changeElementsListReducer)
-// Эти продукты всегда должны быть
-store.dispatch({ type:"addElement", name: "CO2"})
-store.dispatch({ type:"addElement", name: "H2O"})*/
 
 export default function InputSubstance(props) {
-	const [state, setState] = useState(false)
 
+	const [state, setState] = useState(false)
   const dispatch = useDispatch()
-  const data = useSelector(state => state.data)
+
+  try {
+	  let data = useSelector(state => state.data)
+
+	  for (let elem of data) {
+	  	console.log(elem.name, props.name)
+	  	if (elem.name === props.name && !state) {
+	  		setState(true)
+	  	}
+	  }
+
+	  console.log("Success")
+  } catch {
+  	console.log("Error")
+  }
 
 	return (
 		<label>
-			<input type="checkbox" onClick={() => changeElement(props.name)}></input>
+			<input type="checkbox" checked={state} onChange={() => changeElement(props.name)}></input>
 			<span id={props.name}>{props.name}</span>
 		</label>
 	)
@@ -26,10 +33,10 @@ export default function InputSubstance(props) {
 	function changeElement(name) {
 		if (state) {
 			setState(false)
-			store.dispatch({ type:"removeElement", name: props.name})
+			dispatch({ type:"removeElement", name: props.name})
 		} else {
 			setState(true)
-			store.dispatch({ type:"addElement", name: props.name})
+			dispatch({ type:"addElement", name: props.name})
 		}
 	}
 }
