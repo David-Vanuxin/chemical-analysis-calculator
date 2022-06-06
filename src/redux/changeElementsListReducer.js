@@ -30,6 +30,10 @@ export default function changeElementsListReducer(state = initialState, action) 
 		return state
 	}
 
+	if (action.type === "restart") {
+		return initialState
+	}
+
 /*	if (action.type === "changeMass") {
 
 
