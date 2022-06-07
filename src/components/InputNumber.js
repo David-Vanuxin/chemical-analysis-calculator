@@ -3,7 +3,7 @@ import {useDispatch} from 'react-redux'
 
 export default function InputNumber(props) {
 	let unit = "г"
-	if (props.name === "CO2") unit = "л"
+	if (props.name === "CO2" || props.name === "HCl") unit = "л"
 
 	const dispatch = useDispatch()
 

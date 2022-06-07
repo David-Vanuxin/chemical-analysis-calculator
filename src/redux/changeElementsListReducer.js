@@ -72,13 +72,6 @@ export const changeElementsListReducer = (state = initialState, action) => {
 			console.log("Matter mass added")
 			console.log(newState.data)
 			return newState
-/*			state.data.forEach(elem => {
-				if (elem.name === "matter") {
-					elem.value = action.value
-				}
-			})
-
-			return state*/
 
 		default:
 			console.warn("Undefined case", action.type)
