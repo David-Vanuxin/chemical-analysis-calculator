@@ -9,14 +9,14 @@ export const Result = () => {
 
   let data = useSelector(state => state.data)
 
-	return(
-		<>
-			<h1>Калькулятор для химического анализа органических веществ</h1>
-			<h2>Результат</h2>
-			<p>{calckResult(data)}</p>
-			<>
-				<button onClick={() => navigate("/quantitative-values")}>Назад</button>
-				<button onClick={() => {navigate("/matter-mass"); dispatch({type:"restart"})}}>Ещё раз</button>
-			</>
-		</>)
+  return(
+    <>
+      <h1>Калькулятор для химического анализа органических веществ</h1>
+      <h2>Результат</h2>
+      <p>{calckResult(data)}</p>
+      <>
+        <button onClick={() => navigate("/quantitative-values")}>Назад</button>
+        <button onClick={() => {navigate("/matter-mass"); dispatch({type:"restart"})}}>Ещё раз</button>
+      </>
+    </>)
 }

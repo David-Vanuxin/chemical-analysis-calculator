@@ -8,17 +8,17 @@ export const Home = () => {
   let Start = (<button onClick={() => navigate(`/matter-mass`)}>Старт</button>)
 
   try {
-  	let data = useSelector(state => state.data)
-  	console.log(data)
-		Start = (<button onClick={() => {navigate(`/matter-mass`); dispatch({type:"restart"})} }>Старт</button>)
+    let data = useSelector(state => state.data)
+    console.log(data)
+    Start = (<button onClick={() => {navigate(`/matter-mass`); dispatch({type:"restart"})} }>Старт</button>)
   } catch {}
 
-	return(
-		<>
-			<h1>Калькулятор для химического анализа органических веществ</h1>
-			<h2>
-				По количественным характеристикам продуктов сгорания органического вещества определяет его молекулярную формулу
-			</h2>
-			{Start}
-		</>)
+  return(
+    <>
+      <h1>Калькулятор для химического анализа органических веществ</h1>
+      <h2>
+        По количественным характеристикам продуктов сгорания органического вещества определяет его молекулярную формулу
+      </h2>
+      {Start}
+    </>)
 }
