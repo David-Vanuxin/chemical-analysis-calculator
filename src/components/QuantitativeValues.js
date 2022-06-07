@@ -4,7 +4,7 @@ import InputNumber from "./InputNumber"
 
 import { useSelector } from 'react-redux'
 
-export default function QuantitativeValues(props) {
+export const QuantitativeValues = () => {
   let navigate = useNavigate();
 
   let data = useSelector((state) => state.data)

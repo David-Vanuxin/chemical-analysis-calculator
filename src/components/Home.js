@@ -1,21 +1,24 @@
 import React from "react"
 import { useNavigate } from "react-router-dom"
-import {useSelector, /*useDispatch*/} from "react-redux"
+import {useSelector, useDispatch} from "react-redux"
 
-export default function Home(props) {
+export const Home = () => {
   let navigate = useNavigate();
-  //const dispatch = useDispatch()
+  const dispatch = useDispatch()
+  let Start = (<button onClick={() => navigate(`/combustion-products`)}>Старт</button>)
 
-	try {
-		let data = useSelector(state => state.data)
-		console.warn("Данные должны быть стёрты перед рестартом ")
-	} catch {
-		console.log("Error")
-	}
+  try {
+  	let data = useSelector(state => state.data)
+  	console.log(data)
+		Start = (<button onClick={() => {navigate(`/combustion-products`); dispatch({type:"restart"})} }>Старт</button>)
+  } catch {}
 
 	return(
 		<>
 			<h1>Калькулятор для химического анализа органических веществ</h1>
-			<button onClick={() => navigate(`/combustion-products`)}>Старт</button>
+			<h2>
+				По количественным характеристикам продуктов сгорания органического вещества определяет его молекулярную формулу
+			</h2>
+			{Start}
 		</>)
 }

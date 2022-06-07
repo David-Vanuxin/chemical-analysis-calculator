@@ -2,7 +2,7 @@ import React from "react"
 import { useNavigate } from "react-router-dom"
 import InputSubstance from "./InputSubstance"
 
-export default function CombustionProducts(props) {
+export const CombustionProducts = () => {
   let navigate = useNavigate();
 
   let matters = [

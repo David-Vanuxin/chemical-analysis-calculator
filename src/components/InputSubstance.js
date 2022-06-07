@@ -3,23 +3,18 @@ import {useDispatch, useSelector} from 'react-redux'
 
 export default function InputSubstance(props) {
 
-	const [state, setState] = useState(false)
+const [state, setState] = useState(false)
   const dispatch = useDispatch()
 
   try {
 	  let data = useSelector(state => state.data)
 
 	  for (let elem of data) {
-	  	console.log(elem.name, props.name)
 	  	if (elem.name === props.name && !state) {
 	  		setState(true)
 	  	}
 	  }
-
-	  console.log("Success")
-  } catch {
-  	console.log("Error")
-  }
+  } catch {}
 
 	return (
 		<label>

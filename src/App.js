@@ -5,20 +5,17 @@ import {
   Route
 } from "react-router-dom";
 
-import Home from "./components/Home"
-import CombustionProducts from "./components/CombustionProducts"
-import QuantitativeValues from "./components/QuantitativeValues"
-import Result from "./components/Result"
+import * as Components from "./components"
 
 export default function App() {
   return (
     <Router>
       <div>
         <Routes>
-          <Route path="/" caseSensitive={false} element={<Home />} />
-          <Route path="/combustion-products" caseSensitive={false} element={<CombustionProducts />} />
-          <Route path="/quantitative-values" caseSensitive={false} element={<QuantitativeValues />} />
-          <Route path="/result" caseSensitive={false} element={<Result />} />
+          <Route path="/" caseSensitive={false} element={<Components.Home />} />
+          <Route path="/combustion-products" caseSensitive={false} element={<Components.CombustionProducts />} />
+          <Route path="/quantitative-values" caseSensitive={false} element={<Components.QuantitativeValues />} />
+          <Route path="/result" caseSensitive={false} element={<Components.Result />} />
         </Routes>
       </div>
     </Router>
@@ -27,15 +24,16 @@ export default function App() {
 
 
 // Не реализованные фичи:
+// использовать хук useEffect() в <App />
 // Вид химических формул (нужно заключить цифру в тег <sub>) (1)
 // Переход к следующему элементу <input> по нажатию enter (2)
 
 // (1)
-let times = 0
+/*let times = 0
 document.getElementById("root").addEventListener("DOMSubtreeModified", event => {
   console.log(`DOMtree changed ${++times} times`)
   // Лучше искать по тегу <span>
-/*  const pre_labs = document.getElementsByTagName("label")
+  const pre_labs = document.getElementsByTagName("label")
 
   if (pre_labs.length == 0) return
 
@@ -65,8 +63,8 @@ document.getElementById("root").addEventListener("DOMSubtreeModified", event => 
     result = result.join("")
     console.log(result)
     span.innerHTML = result
-  }*/
-})
+  }
+})*/
 
 // (2)
 /*document.getElementById("root").addEventListener("DOMSubtreeModified", event => {
