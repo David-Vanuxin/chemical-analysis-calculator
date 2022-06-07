@@ -8,7 +8,7 @@ export default function InputNumber(props) {
 	const dispatch = useDispatch()
 
 	function changeValue(name, value) {
-		dispatch({ type:"changeMass", name: props.name, mass: value })
+		dispatch({ type:"changeMass", name: props.name, value: value })
 	}
 
 	return (

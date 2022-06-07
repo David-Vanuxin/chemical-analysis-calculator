@@ -25,7 +25,7 @@ export const CombustionProducts = () => {
 			}
 			</ul>
 			<>
-				<button onClick={() => navigate("/")}>Назад</button>
+				<button onClick={() => navigate("/matter-mass")}>Назад</button>
 				<button onClick={() => navigate("/quantitative-values")}>Далее</button>
 			</>
 		</>

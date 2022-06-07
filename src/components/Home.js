@@ -5,12 +5,12 @@ import {useSelector, useDispatch} from "react-redux"
 export const Home = () => {
   let navigate = useNavigate();
   const dispatch = useDispatch()
-  let Start = (<button onClick={() => navigate(`/combustion-products`)}>Старт</button>)
+  let Start = (<button onClick={() => navigate(`/matter-mass`)}>Старт</button>)
 
   try {
   	let data = useSelector(state => state.data)
   	console.log(data)
-		Start = (<button onClick={() => {navigate(`/combustion-products`); dispatch({type:"restart"})} }>Старт</button>)
+		Start = (<button onClick={() => {navigate(`/matter-mass`); dispatch({type:"restart"})} }>Старт</button>)
   } catch {}
 
 	return(

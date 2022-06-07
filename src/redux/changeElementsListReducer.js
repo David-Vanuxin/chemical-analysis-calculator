@@ -2,10 +2,12 @@ const initialState = {
 	data: [
 		{name:"CO2", value:null},
 		{name:"H2O", value:null},
+		{name:"matter", value:null},
 	]
 }
 
 export const changeElementsListReducer = (state = initialState, action) => {
+	let newState
 	switch (action.type) {
 		case "addElement":
 			state.data.push({
@@ -28,13 +30,55 @@ export const changeElementsListReducer = (state = initialState, action) => {
 				data: [
 					{name:"CO2", value:null},
 					{name:"H2O", value:null},
+					{name:"matter", value:null},
 				]
 			}
 			return initialState2
 
 		case "changeMass":
-			console.log(`Mass elem ${action.name} = ${action.value} `)
-			return state
+			newState = {
+				data:[]
+			}
+
+			for (let elem of state.data) {
+				if (elem.name !== action.name) {
+					newState.data.push(elem)
+					continue
+				}
+
+				newState.data.push({
+					name: action.name,
+					value: action.value
+				})
+			}
+			return newState
+
+		case "changeMatterMass":
+			newState = {
+				data:[]
+			}
+
+			for (let elem of state.data) {
+				if (elem.name !== action.name) {
+					newState.data.push(elem)
+					continue
+				}
+
+				newState.data.push({
+					name: "matter",
+					value: action.value
+				})
+			}
+			console.log("Matter mass added")
+			console.log(newState.data)
+			return newState
+/*			state.data.forEach(elem => {
+				if (elem.name === "matter") {
+					elem.value = action.value
+				}
+			})
+
+			return state*/
 
 		default:
 			console.warn("Undefined case", action.type)

@@ -13,6 +13,7 @@ export default function App() {
       <div>
         <Routes>
           <Route path="/" caseSensitive={false} element={<Components.Home />} />
+          <Route path="/matter-mass" caseSensitive={false} element={<Components.MatterMass />} />
           <Route path="/combustion-products" caseSensitive={false} element={<Components.CombustionProducts />} />
           <Route path="/quantitative-values" caseSensitive={false} element={<Components.QuantitativeValues />} />
           <Route path="/result" caseSensitive={false} element={<Components.Result />} />
