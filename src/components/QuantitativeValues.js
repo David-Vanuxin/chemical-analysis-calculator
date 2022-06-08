@@ -16,7 +16,6 @@ export const QuantitativeValues = () => {
       <ul>
       {
         data.map((elem, index) => {
-          if (elem.name === "matter") return
           return (<li key={index}><InputNumber name={elem.name}/></li>)
         })
       }
