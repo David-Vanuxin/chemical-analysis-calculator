@@ -10,7 +10,7 @@ export const Home = () => {
   try {
     let data = useSelector(state => state.data)
     console.log(data)
-    Start = (<button onClick={() => {navigate(`/matter-mass`); dispatch({type:"restart"})} }>Старт</button>)
+    Start = (<button onClick={() => {navigate(`/app-type`); dispatch({type:"restart"})} }>Старт</button>)
   } catch {}
 
   return(

@@ -17,6 +17,9 @@ export default function App() {
           <Route path="/combustion-products" caseSensitive={false} element={<Components.CombustionProducts />} />
           <Route path="/quantitative-values" caseSensitive={false} element={<Components.QuantitativeValues />} />
           <Route path="/result" caseSensitive={false} element={<Components.Result />} />
+          <Route path="/app-type" caseSensitive={false} element={<Components.AppType />} />
+          <Route path="/matters" caseSensitive={false} element={<Components.Matters />} />
+          <Route path="/percents-values" caseSensitive={false} element={<Components.PercentsValues />} />
         </Routes>
       </div>
     </Router>
