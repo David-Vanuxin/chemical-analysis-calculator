@@ -7,7 +7,7 @@ const [state, setState] = useState(false)
   const dispatch = useDispatch()
 
   try {
-    let data = useSelector(state => state.data)
+    let data = useSelector(state => state.elementsList.elements)
 
     for (let elem of data) {
       if (elem.name === props.name && !state) {
