@@ -1,14 +1,14 @@
 const initialState = {
-  type:null
+  type:"values"
 }
 
 export const changeAppType = (state = initialState, action) => {
   switch(action.type) {
     case "changeAppType":
-        state.matter = action.value
+        state.type = action.value
       return state
 
-    case "restart": return {type:null}
+    case "restart": return {type:"values"}
 
     default: return state
   }

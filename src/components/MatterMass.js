@@ -22,7 +22,7 @@ export const MatterMass = () =>  {
       </>
       <>
         <button onClick={() => navigate("/app-type")}>Назад</button>
-        <button onClick={() => navigate(`/combustion-products`)}>Далее</button>
+        <button onClick={() => navigate(`/matters`)}>Далее</button>
       </>
     </>
   )

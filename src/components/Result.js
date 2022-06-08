@@ -9,14 +9,24 @@ export const Result = () => {
 
   let state = useSelector(state => state)
 
+  let Back = "Определите тип задачи"
+
+  if (state.type.type === "percents") {
+    Back = (<button onClick={() => navigate("/percents-values")}>Назад</button>)
+  }
+
+  if (state.type.type === "values") {
+    Back = (<button onClick={() => navigate("/quantitative-values")}>Назад</button>)
+  }  
+
   return(
     <>
       <h1>Калькулятор для химического анализа органических веществ</h1>
       <h2>Результат</h2>
       <p>{calckResult(state)}</p>
       <>
-        <button onClick={() => navigate("/quantitative-values")}>Назад</button>
-        <button onClick={() => {navigate("/matter-mass"); dispatch({type:"restart"})}}>Ещё раз</button>
+        { Back }
+        <button onClick={() => {navigate("/app-type"); dispatch({type:"restart"})}}>Ещё раз</button>
       </>
     </>)
 }
