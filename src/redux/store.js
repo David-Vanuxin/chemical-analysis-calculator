@@ -1,4 +1,4 @@
 import {createStore} from "redux"
-import {changeElementsListReducer} from "./changeElementsListReducer"
+import {rootReducer} from "./rootReducer"
 
-export const store = createStore(changeElementsListReducer)
+export const store = createStore(rootReducer)

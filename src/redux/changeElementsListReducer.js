@@ -1,80 +1,39 @@
 const initialState = {
-  data: [
+  elements: [
     {name:"CO2", value:null},
     {name:"H2O", value:null},
-    {name:"matter", value:null},
   ]
 }
 
 export const changeElementsListReducer = (state = initialState, action) => {
-  let newState
   switch (action.type) {
     case "addElement":
-      state.data.push({
+      state.elements.push({
         name: action.name,
         value:null
       })
       return state
 
     case "removeElement":
-      for (let elem of state.data) {
+      for (let elem of state.elements) {
         if (elem.name === action.name) {
-          let index = state.data.indexOf(elem)
-          state.data.splice(index, index + 1)
+          let index = state.elements.indexOf(elem)
+          state.elements.splice(index, index + 1)
         }
       }
       return state
-
-    case "restart":
-      const initialState2 = {
-        data: [
-          {name:"CO2", value:null},
-          {name:"H2O", value:null},
-          {name:"matter", value:null},
-        ]
-      }
-      return initialState2
 
     case "changeMass":
-      newState = {
-        data:[]
-      }
-
-      for (let elem of state.data) {
-        if (elem.name !== action.name) {
-          newState.data.push(elem)
-          continue
+      for (let elem of state.elements) {
+        if (elem.name === action.name) {
+          elem.value = action.value
         }
-
-        newState.data.push({
-          name: action.name,
-          value: action.value
-        })
       }
-      return newState
-
-    case "changeMatterMass":
-      newState = {
-        data:[]
-      }
-
-      for (let elem of state.data) {
-        if (elem.name !== action.name) {
-          newState.data.push(elem)
-          continue
-        }
-
-        newState.data.push({
-          name: "matter",
-          value: action.value
-        })
-      }
-      console.log("Matter mass added")
-      console.log(newState.data)
-      return newState
-
-    default:
-      console.warn("Undefined case", action.type)
+      console.log(state.elements)
       return state
+
+    case "restart": return initialState
+
+    default: return state
   }
 }

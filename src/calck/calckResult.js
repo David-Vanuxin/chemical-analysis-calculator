@@ -1,8 +1,10 @@
-export function calckResult(data) {
+export function calckResult(state) {
   // "Сложная" логика приложения
 
   // Вещество по элементам
   let matter = []// [{"c":12}, {"h":23}, ]]
+
+  const data = state.elementsList.elements
 
   for (let product of data) {
     if (product.value === null) {

@@ -7,7 +7,8 @@ import { useSelector } from 'react-redux'
 export const QuantitativeValues = () => {
   let navigate = useNavigate();
 
-  let data = useSelector((state) => state.data)
+  let elements = useSelector((state) => state.elementsList.elements)
+  console.log(elements)
 
   return(
     <>
@@ -15,7 +16,7 @@ export const QuantitativeValues = () => {
       <h2>Введите количественные значения для продуктов сгорания</h2>
       <ul>
       {
-        data.map((elem, index) => {
+        elements.map((elem, index) => {
           return (<li key={index}><InputNumber name={elem.name}/></li>)
         })
       }
