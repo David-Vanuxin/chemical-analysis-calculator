@@ -4,8 +4,9 @@ import {useDispatch, useSelector} from "react-redux"
 
 export const AppType = () =>  {
   let navigate = useNavigate();
+  let state = useSelector(state => state)
 
-  const [appType, setAppType] = useState("values")
+  const [appType, setAppType] = useState(state.type.type)
 
   const dispatch = useDispatch()
 
@@ -14,7 +15,6 @@ export const AppType = () =>  {
   if (appType === "percents") Next = (<button onClick={() => navigate(`/matter-mass`)}>Далее</button>)
 
 
-  let state = useSelector(state => state)
   console.log(state.type.type)
 
   return (
@@ -23,11 +23,11 @@ export const AppType = () =>  {
       <h2>Выберите тип задачи: </h2>
       <>
         <label>
-          <input checked={appType === "percents" ? true : false} onChange={() => {setAppType("percents"); dispatch({type:"changeAppType", value:"percents"})}} type="radio" name="appType"></input>
+          <input checked={appType === "percents" ? true : false} onChange={() => { setAppType("percents"); dispatch({type:"changeAppType", value:"percents"})} } type="radio" name="appType"></input>
           Проценты
         </label>
         <label>
-          <input checked={appType === "values" ? true : false} onChange={() => {setAppType("values"); dispatch({type:"changeAppType", value:"values"})}} type="radio" name="appType"></input>
+          <input checked={appType === "values" ? true : false} onChange={() => { setAppType("values"); dispatch({type:"changeAppType", value:"values"})} } type="radio" name="appType"></input>
           Значения
         </label>
       </>

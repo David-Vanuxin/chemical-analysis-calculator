@@ -29,7 +29,6 @@ export const changeElementsListReducer = (state = initialState, action) => {
           elem.value = action.value
         }
       }
-      console.log(state.elements)
       return state
 
     case "restart": 

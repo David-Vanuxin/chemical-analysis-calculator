@@ -10,8 +10,8 @@ export const PercentsValues = () =>  {
 
   const changePercent = (name, value) =>  {
     dispatch({
-      type:"changePercentValue",// Нужно добавить редьюсер для этого события
-      // также в калькуляторе нужно брать значения из массива процентов, если type === "percent" 
+      type:"changeMass",// не нужно добавить отдельный редьюсер для этого события - он уже есть
+      // только в калькуляторе нужно брать значения как проценты, если type === "percent" 
       name,
       value
     })
@@ -25,6 +25,8 @@ export const PercentsValues = () =>  {
         <ul>
         {
           elements.map((elem, index) => {
+            if (elem.name === "CO2") elem.name = "C"
+            if (elem.name === "H2O") elem.name = "H"
             return (
               <li key={index}>
                 <label>{elem.name}<input type="number" onChange={(event) => changePercent(elem.name, event.target.valueAsNumber)}></input>%</label>
@@ -35,7 +37,7 @@ export const PercentsValues = () =>  {
         </ul>
       </>
       <>
-        <button onClick={() => navigate("/")}>Назад</button>
+        <button onClick={() => navigate("/matters")}>Назад</button>
         <button onClick={() => navigate("/result")}>Результат</button>
       </>
     </>

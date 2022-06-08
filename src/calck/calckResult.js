@@ -8,6 +8,6 @@ export function calckResult(state) {
   }
 
   if (state.type.type === "percents") {
-    return "Вычисления с процентами ещё не добавлены"
+    return JSON.stringify( state )
   }
 }

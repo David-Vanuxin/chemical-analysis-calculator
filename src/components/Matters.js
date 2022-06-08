@@ -18,7 +18,7 @@ export const Matters = () =>  {
         </ul>
       </>
       <>
-        <button onClick={() => navigate("/app-type")}>Назад</button>
+        <button onClick={() => navigate("/matter-mass")}>Назад</button>
         <button onClick={() => navigate("/percents-values")}>Далее</button>
       </>
     </>
