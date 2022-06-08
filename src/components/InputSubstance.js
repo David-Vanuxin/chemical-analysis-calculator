@@ -6,15 +6,13 @@ export default function InputSubstance(props) {
 const [state, setState] = useState(false)
   const dispatch = useDispatch()
 
-  try {
-    let data = useSelector(state => state.elementsList.elements)
+  let data = useSelector(state => state.elementsList.elements)
 
-    for (let elem of data) {
-      if (elem.name === props.name && !state) {
-        setState(true)
-      }
+  for (let elem of data) {
+    if (elem.name === props.name && !state) {
+      setState(true)
     }
-  } catch {}
+  }
 
   return (
     <label>

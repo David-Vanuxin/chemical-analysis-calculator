@@ -32,7 +32,13 @@ export const changeElementsListReducer = (state = initialState, action) => {
       console.log(state.elements)
       return state
 
-    case "restart": return initialState
+    case "restart": 
+      return {
+        elements: [
+          {name:"CO2", value:null},
+          {name:"H2O", value:null},
+        ]
+      }
 
     default: return state
   }

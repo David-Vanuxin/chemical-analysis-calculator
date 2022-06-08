@@ -1,6 +1,6 @@
 import React, {useState} from "react"
 import { useNavigate } from "react-router-dom"
-import {useDispatch} from "react-redux"
+import {useDispatch, useSelector} from "react-redux"
 
 export const AppType = () =>  {
   let navigate = useNavigate();
@@ -12,6 +12,10 @@ export const AppType = () =>  {
   let Next = (<button onClick={() => navigate(`/matter-mass`)}>Далее</button>)
 
   if (appType === "percents") Next = (<button onClick={() => navigate(`/matters`)}>Далее</button>)
+
+
+  let state = useSelector(state => state)
+  console.log(state)
 
   return (
     <>

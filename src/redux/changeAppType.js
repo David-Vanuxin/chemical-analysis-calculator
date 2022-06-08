@@ -8,9 +8,8 @@ export const changeAppType = (state = initialState, action) => {
         state.matter = action.value
       return state
 
-    case "restart": return initialState
+    case "restart": return {type:null}
 
-    default:
-      return state
+    default: return state
   }
 }
