@@ -111,13 +111,6 @@ export const calckWithValues = (data) => {
         }
         break
 
-/*      case "matter":
-        matter.push({
-          name: "matterMass",
-          mass: product.value
-        })
-        break*/
-
       default:
         console.warn("Продукт не добавлен: ", product.name)
     }
