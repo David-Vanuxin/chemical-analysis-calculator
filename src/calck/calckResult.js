@@ -1,13 +1,17 @@
 import {calckWithValues} from "./calckWithValues"
 
-export function calckResult(state) {
+export const calckResult = (state) => {
   // "Сложная" логика приложения
+  console.log(state)
+
 
   if (state.type.type === "values") {
-    return JSON.stringify( calckWithValues(state.elementsList.elements) )
+    const elements = calckWithValues(state.elementsList.elements)
+    // Найти кислород по массе
+    return JSON.stringify( elements )
   }
 
   if (state.type.type === "percents") {
-    return JSON.stringify( state )
+    return JSON.stringify( state.elementsList.elements )
   }
 }

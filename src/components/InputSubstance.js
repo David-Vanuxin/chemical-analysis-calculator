@@ -3,7 +3,7 @@ import {useDispatch, useSelector} from 'react-redux'
 
 export default function InputSubstance(props) {
 
-const [state, setState] = useState(false)
+  const [state, setState] = useState(false)
   const dispatch = useDispatch()
 
   let data = useSelector(state => state.elementsList.elements)

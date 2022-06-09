@@ -16,7 +16,7 @@ export const CombustionProducts = () => {
         <li><InputSubstance name="K2CO3"/></li>
       </ul>
       <>
-        <button onClick={() => navigate("/app-type")}>Назад</button>
+        <button onClick={() => navigate("/matter-mass")}>Назад</button>
         <button onClick={() => navigate("/quantitative-values")}>Далее</button>
       </>
     </>

@@ -1,15 +1,33 @@
 import React from "react"
 import { useNavigate } from "react-router-dom"
-import {useDispatch} from "react-redux"
+import {useDispatch, useSelector} from "react-redux"
 
 export const MatterMass = () =>  {
   const dispatch = useDispatch()
   let navigate = useNavigate();
 
   function changeValue(value) {
-    dispatch({ type:"changeMatterMass", name: "matter", value: value })
+    dispatch({ type:"changeMatterMass", mass: value })
   }
 
+  const skip = (url) => {
+    dispatch({ type:"deleteMatterMass" })
+    navigate(url)
+  }
+
+  let appType = useSelector(state => state.type.type)
+
+  let skipURL
+
+  if (appType === 'values') {
+    skipURL = `/combustion-products`
+  }
+
+  if (appType === 'percents') {
+    skipURL = `/matters`
+  }
+
+  // Значение массы тоже должно оставаться в поле ввода при переходе по кнопке "Назад" со следующей страницы
   return (
     <>
       <h1>Калькулятор для химического анализа органических веществ</h1>
@@ -22,7 +40,8 @@ export const MatterMass = () =>  {
       </>
       <>
         <button onClick={() => navigate("/app-type")}>Назад</button>
-        <button onClick={() => navigate(`/matters`)}>Далее</button>
+        <button onClick={() => navigate(skipURL)}>Далее</button>
+        <button onClick={() => skip(skipURL)}>Пропустить</button>
       </>
     </>
   )

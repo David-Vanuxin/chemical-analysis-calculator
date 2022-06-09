@@ -10,13 +10,6 @@ export const AppType = () =>  {
 
   const dispatch = useDispatch()
 
-  let Next = (<button onClick={() => navigate(`/combustion-products`)}>Далее</button>)
-
-  if (appType === "percents") Next = (<button onClick={() => navigate(`/matter-mass`)}>Далее</button>)
-
-
-  console.log(state.type.type)
-
   return (
     <>
       <h1>Калькулятор для химического анализа органических веществ</h1>
@@ -33,7 +26,7 @@ export const AppType = () =>  {
       </>
       <>
         <button onClick={() => navigate("/")}>Назад</button>
-        {Next}
+        <button onClick={() => navigate(`/matter-mass`)}>Далее</button>
       </>
     </>
   )

@@ -40,14 +40,14 @@ export const calckWithValues = (data) => {
       case "HCl":// тоже в литрах
         // Вычисление массы хлора
         mass = (product.value / 22.4) * 36.5 // граммы
-        massElement = calckElemMass(product.value, 36.5, 35.5)      
+        massElement = calckElemMass(mass, 36.5, 35.5)      
         matter.push({
           name:"Cl",
           mass: massElement
         })
 
         // Вычисление массы водорода и добавление в её массив
-        massElement = calckElemMass(product.value, 36.5, 1)     
+        massElement = calckElemMass(mass, 36.5, 1)     
 
         for (let elem of matter) {
           if (elem.name !== "H") continue
@@ -111,12 +111,12 @@ export const calckWithValues = (data) => {
         }
         break
 
-      case "matter":
+/*      case "matter":
         matter.push({
           name: "matterMass",
           mass: product.value
         })
-        break
+        break*/
 
       default:
         console.warn("Продукт не добавлен: ", product.name)

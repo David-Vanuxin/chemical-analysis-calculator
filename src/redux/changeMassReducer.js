@@ -1,14 +1,15 @@
 const initialState = {
-  matter:null
+  mass:null
 }
 
 export const changeMatterMassReducer = (state = initialState, action) => {
   switch(action.type) {
     case "changeMatterMass":
-        state.matter = action.value
+        state.mass = action.mass
       return state
 
-    case "restart": return {matter:null}
+    case "deleteMatterMass":
+    case "restart": return {mass:null}
 
     default: return state
   }
