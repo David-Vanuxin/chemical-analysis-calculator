@@ -6,8 +6,7 @@
 ```bash
 git clone https://github.com/David-Vanuxin/Chemical-analysis-calculator.git &&
 cd Chemical-analysis-calculator &&
-npm install &&
-npm run build
+npm start
 ```
 
 ### В разработке:
