@@ -1,4 +1,3 @@
-import React from "react"
 import { useNavigate } from "react-router-dom"
 import { useSelector, useDispatch } from 'react-redux'
 
@@ -18,7 +17,7 @@ export const PercentsValues = () =>  {
   }
 
   return (
-    <>
+    <div className="main">
       <h1>Калькулятор для химического анализа органических веществ</h1>
       <h2>Введите значения процентного содержания каждого вещества</h2>
       <>
@@ -36,10 +35,10 @@ export const PercentsValues = () =>  {
         }
         </ul>
       </>
-      <>
+      <div className="button-wrapper">
         <button onClick={() => navigate("/matters")}>Назад</button>
         <button onClick={() => navigate("/result")}>Результат</button>
-      </>
-    </>
+      </div>
+    </div>
   )
 }

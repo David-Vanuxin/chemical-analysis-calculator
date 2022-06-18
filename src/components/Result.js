@@ -26,16 +26,16 @@ export const Result = () => {
   })
 
   return(
-    <>
+    <div className="main">
       <h1>Калькулятор для химического анализа органических веществ</h1>
       <h2>Результат</h2>
       <p>
         Возможные молекулярные формулы:<br />
         <span ref={resultRef}></span>
       </p>
-      <>
+      <div className="button-wrapper">
         { Back }
         <button onClick={() => {navigate("/app-type"); dispatch({type:"restart"})}}>Ещё раз</button>
-      </>
-    </>)
+      </div>
+    </div>)
 }

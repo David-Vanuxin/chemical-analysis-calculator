@@ -1,33 +1,30 @@
-import React, {useState} from "react"
 import { useNavigate } from "react-router-dom"
-import {useDispatch, useSelector} from "react-redux"
+import { useDispatch } from "react-redux"
 
 export const AppType = () =>  {
   let navigate = useNavigate();
-  let state = useSelector(state => state)
-
-  const [appType, setAppType] = useState(state.type.type)
 
   const dispatch = useDispatch()
 
   return (
-    <>
+    <div className="main">
       <h1>Калькулятор для химического анализа органических веществ</h1>
       <h2>Выберите тип задачи: </h2>
-      <>
-        <label>
-          <input checked={appType === "percents" ? true : false} onChange={() => { setAppType("percents"); dispatch({type:"changeAppType", value:"percents"})} } type="radio" name="appType"></input>
-          Проценты
-        </label>
-        <label>
-          <input checked={appType === "values" ? true : false} onChange={() => { setAppType("values"); dispatch({type:"changeAppType", value:"values"})} } type="radio" name="appType"></input>
-          Значения
-        </label>
-      </>
-      <>
+      <div className="select-card-wrapper">
+        <div className="select-card" onClick={() => {dispatch({type:"changeAppType", value:"percents"}); navigate(`/matter-mass`)}}>
+          <h3>Проценты</h3>
+          <hr />
+          <p>Определение молекулярной формулы по массовым долям элементов</p>
+        </div>
+        <div className="select-card" onClick={() => {dispatch({type:"changeAppType", value:"values"}); navigate(`/matter-mass`)}}>
+          <h3>Значения</h3>
+          <hr />
+          <p>Определение молекулярной формулы по продуктам сгорания</p>
+        </div>
+      </div>
+      <div className="button-wrapper">
         <button onClick={() => navigate("/")}>Назад</button>
-        <button onClick={() => navigate(`/matter-mass`)}>Далее</button>
-      </>
-    </>
+      </div>
+    </div>
   )
 }
