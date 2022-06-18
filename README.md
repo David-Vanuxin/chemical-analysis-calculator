@@ -2,13 +2,6 @@
  
 По количественным характеристикам продуктов сгорания органического вещества определяет его молекулярную формулу
 
-## Building
-```bash
-git clone https://github.com/David-Vanuxin/Chemical-analysis-calculator.git &&
-cd Chemical-analysis-calculator &&
-npm start
-```
-
 ### Ведётся работа:
 1. Нахождение формулы по массовым долям элементов
 2. Перевод на TypeScript 
