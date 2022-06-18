@@ -6,12 +6,11 @@
 ```bash
 git clone https://github.com/David-Vanuxin/Chemical-analysis-calculator.git &&
 cd Chemical-analysis-calculator &&
-npm install &&
-npm run build
+npm start
 ```
 
 ### Ведётся работа:
-1. Вычисления по процентам масс элементов
+1. Нахождение формулы по массовым долям элементов
 2. Перевод на TypeScript 
 3. Рефакторинг (не всё переиспользуется)
 3. Перевод на Next.js
