@@ -2,29 +2,40 @@ import {calckResult} from '../calck/calckResult'
 import {addOxigeniumMass} from '../calck/addOxigeniumMass'
 import {calckWithValues} from '../calck/calckWithValues'
 import {findMolecularFormula} from '../calck/findMolecularFormula'
- 
 
-describe('Проверка на правильность нахождения масс элементов по значениям продуктов реакции', () => {
+describe('Проверка на правильность нахождения масс элементов по значениям продуктов сгорания', () => {
     const elements = [
-      {name: 'CO2', value: 22.4},
-      {name: 'H2O', value: 18},
-      {name: 'N2', value: 28},
-      {name: 'HCl', value: 22.4},
-      {name: 'Na2CO3', value: 106},
-      {name: 'K2CO3', value: 138}
+      {name: 'CO2', value: 44.8},
+      {name: 'H2O', value: 54}
     ]
     /*expect(calckWithValues(elements)).toMatch('C')*/
     test('', () => {
       expect( calckWithValues(elements) ).toEqual([
-        {name:'C', mass: 36},
-        {name:'H', mass: 3},
-        {name:'N', mass: 28},
-        {name:'Cl', mass: 35.5},
-        {name: 'Na', mass: 46},
-        {name: 'K', mass: 78}
+        {name:'C', mass: 24},
+        {name:'H', mass: 6},
       ])
     })
 })
+
+
+describe('Проверка на правильность нахождения масс элементов по значениям с азотом', () => {
+    const elements = [
+      {name: 'CO2', value: 89.6},
+      {name: 'H2O', value: 90},
+      {name: 'N2', value: 22.4}
+    ]
+    /*expect(calckWithValues(elements)).toMatch('C')*/
+    test('', () => {
+      expect( calckWithValues(elements) ).toEqual([
+        // Умножаем всё на 2, так как сгорает 2 моля метиламина
+        {name:'C', mass: 24 * 2},
+        {name:'H', mass: 5 * 2},
+        {name:'N', mass: 14 * 2},
+      ])
+    })
+})
+
+
 
 describe('Проверка на правильность вычисления массы кислорода', () => {
   const matterMass = 100

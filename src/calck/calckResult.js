@@ -11,18 +11,31 @@ export const calckResult = (state) => {
     }
     // Найти молекулярную формулу
     const formula = findMolecularFormula(elements)
-    let result1 = ''
-    let result2 = ''
-    let result3 = ''
-
     // Вынести это как метод toString()
-    // Поле count переименовать как coefficient
-    formula.forEach(element => {
-      result1 += `${element.name}<sub>${element.count}</sub>`
-      result2 += `${element.name}<sub>${element.count * 2}</sub>`
-      result3 += `${element.name}<sub>${element.count * 3}</sub>`
-    })
-    return result1 + '<br>' + result2 + '<br>' + result3 
+
+    const getStringFormula = (formula, n=1) => {
+      let result = ''
+      formula.forEach(element => {
+        let count = element.count * n
+        if (count === 1) {
+          result += `${element.name}`
+        } else {
+          result += `${element.name}<sub>${count}</sub>`
+        }
+      })
+
+      if (result.match(/\./)) return;
+
+      return result
+    }
+
+    for (let n = 1; n < 10; n++) {
+      let matter = getStringFormula(formula, n)
+
+      if (matter === undefined) continue
+
+      return matter
+    }
   }
 
   if (state.type.type === 'percents') {

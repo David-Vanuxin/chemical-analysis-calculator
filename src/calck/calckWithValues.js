@@ -30,7 +30,8 @@ export const calckWithValues = (data) => {
 
       case 'N2':
         // Вычисление массы азота
-        massElement = calckElemMass(product.value, 28, 28)      
+        mass = (product.value / 22.4) * 28 // граммы
+        massElement = calckElemMass(mass, 28, 28)      
         matter.push({
           name:'N',
           mass: massElement

@@ -27,7 +27,7 @@ export const QuantitativeValues = () => {
 
 const InputNumber = (props) => {
   let unit = "г"
-  if (props.name === "CO2" || props.name === "HCl") unit = "л"
+  if (props.name === "CO2" || props.name === "HCl" || props.name === "N2") unit = "л"
 
   const dispatch = useDispatch()
 
