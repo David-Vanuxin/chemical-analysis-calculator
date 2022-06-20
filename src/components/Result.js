@@ -1,4 +1,4 @@
-import { useMemo, useRef, useEffect } from 'react'
+import React, { useMemo, useRef, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { calckResult } from '../calck/calckResult'
 import {useDispatch, useSelector} from 'react-redux'
