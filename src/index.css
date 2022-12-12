@@ -103,7 +103,8 @@ button {
 }
 
 button:hover {
- background-color: lightgrey; 
+ background-color: lightgrey;
+ cursor: pointer;
 }
 
 button:acive {
