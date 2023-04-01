@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Рендеринг первой страницы 1`] = `
+<div>
+  <div
+    className="main"
+  >
+    <div
+      className="header-wrapper"
+    >
+      <h1>
+        Калькулятор для химического анализа органических веществ
+      </h1>
+      <h2>
+        По количественным характеристикам продуктов сгорания органического вещества определяет его молекулярную формулу
+      </h2>
+    </div>
+    <div
+      className="button-wrapper"
+    >
+      <button
+        onClick={[Function]}
+      >
+        Старт
+      </button>
+    </div>
+  </div>
+</div>
+`;
