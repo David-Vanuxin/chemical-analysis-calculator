@@ -20,7 +20,7 @@ export const Result = () => {
   if (state.type.type === "values") {
     Back = (<button onClick={() => navigate("/quantitative-values")}>Назад</button>)
   }
-  
+
   const resultRef = useRef()
 
   useEffect(() => {
