@@ -34,7 +34,7 @@ export const Result = () => {
       <p ref={resultRef}></p>
       <div className="button-wrapper">
         { Back }
-        <button onClick={() => {navigate("/app-type"); dispatch({type:"restart"})}}>Ещё раз</button>
+        <button onClick={() => {navigate("/matter-mass"); dispatch({type:"restart"})}}>Ещё раз</button>
       </div>
     </div>)
 }

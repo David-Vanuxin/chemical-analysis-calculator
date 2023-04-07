@@ -15,7 +15,7 @@ export const Home = () => {
       </h2>
       </div>
       <div className="button-wrapper">
-      <button onClick={() => {navigate(`/app-type`); dispatch({type:"restart"})} }>Старт</button>
+      <button onClick={() => {navigate(`/matter-mass`); dispatch({type:"restart"})} }>Старт</button>
       </div>
     </div>)
 }

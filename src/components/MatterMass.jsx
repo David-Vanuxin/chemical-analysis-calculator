@@ -39,7 +39,7 @@ export const MatterMass = () =>  {
         </label>
       </div>
       <div className="button-wrapper">
-        <button onClick={() => navigate("/app-type")}>Назад</button>
+        <button onClick={() => navigate("/")}>Назад</button>
         <button onClick={() => navigate(skipURL)}>Далее</button>
         <button onClick={() => skip(skipURL)}>Пропустить</button>
       </div>
